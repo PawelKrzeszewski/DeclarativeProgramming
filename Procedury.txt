@@ -1,0 +1,61 @@
+System ekspertowy polecający filmy
+Paweł Krzeszewski, Kuba Stachowiak
+
+System po podaniu przez użytkownika ostatnio oglądanych filmów wyświetla propozycje filmów do obejrzenia.
+
+kategorie_uzytkownika - spisuje do listy wszystkie kategorie filmów obejrzanych przez użytkownika
+
+aktorzy_uzytkownika - spisuje do listy wszystkich aktorów z filmów obejrzanych
+
+count_occurences - pomocnicza procedura zliczająca wystąpienia danego elementu w liście
+
+find_most_frequent - procedura szukająca najczęściej występującego elementu w liście
+
+dominujace - procedura, która ułatwia przekazanie danych do find_most_frequent
+
+znajdz_film - procedura znajdująca filmy z podanej kategorii i sortująca je po ocenie 
+
+znajdz_po_aktorze - procedura znajdująca filmy w których grał podany aktor i sortująca je po ocenie 
+
+znajdz_film_i_po_aktorze - procedura znajdująca filmy z podanej kategorii, w których grał podany aktore i sortuje je po ocenie
+
+czytaj_filmy - procedura odczytująca filmy wpisane przez użytkownika i zapisująca je do listy
+
+top3 - prosta procedura, która dla danej listy zwraca listę pustą lub wszystkie jej elementy jeśli jest ich co najwyżej 3, a dla 4-elementowych list tylko pierwsze 3
+
+print_filmy - procedura wyświetlająca filmy w formacie "{tytuł_fimu} (Ocena:{ocena_filmu})"
+
+system_ekspertowy - najpierw używajac czytaj_filmy odczytujemy filmy podane przez użytkownika i zapisujemy je do listy, potem używamy procedury znajdz_film_i_po_aktorze zeby znaleźć najlepsze filmy które mają zarówno ulubionego aktora jak i są z ulubionej kategorii, przekazujemy dane do top3 żeby zostały 3 najwyżej ocenaniane filmy i wyświetlamy te filmy na ekran użytkownikowi, potem powtarzamy ten sam proces dla filmów tylko z odpowiedniej kategorii i tylko na podstawie ulubionego aktora. 
+
+Sposób uruchom ienia programu:
+Uruchom Dowolny interpreter prologa i wpisz w konsoli:
+"consult('bazaWiedzy3')"
+a potem w konsoli wpisz: 
+"system_ekspertowy.".
+
+Ulubiona kategoria i ulubiony aktor to taka kategoria i aktor ktory pojawia się w największej ilości filmów użytkownika
+
+
+Przykładowe zapytanie i odpowiedź: 
+
+?- consult('bazaWiedzy3').
+
+?- system_ekspertowy.
+Witaj w systemie polecajacym filmy do obejrzenia.
+Za chwile zostaniesz poproszony o podanie filmow ktore ostatnio ogladales.
+Podaj tytul filmu ktory ostatnio ogladales (wpisz 'koniec' aby zakonczyc): forrest_gump.
+Podaj tytul filmu ktory ostatnio ogladales (wpisz 'koniec' aby zakonczyc): |: koniec.
+System za chwile przedstawi propozycje filmow. Wyswietlone zostana tytul filmu i po myslniku jego ocena od ogladajacych.
+Najlepszymi filmami dla Ciebie beda (Wybrane na podstawie ulubionego gatunku i ulubionego aktora): 
+zielona_mila (Ocena: 86)
+szeregowiec_ryan (Ocena: 86)
+
+Na podstawie kategorii polecam: skazani_na_shawshank (Ocena: 93)
+ojciec_chrzestny (Ocena: 92)
+ojciec_chrzestny_ii (Ocena: 90)
+
+Na podstawie ulubionych aktorow: zielona_mila (Ocena: 86)
+szeregowiec_ryan (Ocena: 86)
+toy_story (Ocena: 84)
+
+Dziekujemy za skorzystanie z naszego systemu polecajacego.
